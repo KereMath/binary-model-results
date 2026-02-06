@@ -27,10 +27,13 @@
 
 ---
 
-## Ozellik Cikarma (Tum Detector'lar Icin Ayni)
+## Ozellik Cikarma
 
 - **TSFresh:** Kullanilmadi
-- **Windowing:** L/5 sliding window (tum detector'larda)
+- **Windowing:**
+  - 9 detector (collective, contextual, deterministic, meannew, point, stochastic, trend_shift, variancenew, volatility): L/5 sliding window (tek strateji)
+  - mean_shift_detector_ml: 3 strateji denendi (L/10, L/5, L/20), en iyi L/5
+  - stationary_detector_ml: L/10 rolling window (dosya-bazli isleme, sliding window yok)
 - **Ozellik Sayisi:** ~38 custom istatistiksel ozellik
 
 ### Cikarilan Ozellikler

@@ -14,7 +14,7 @@
 
 ## Veri Kaynagi ve On Isleme
 - **Ham Veri:** LASTDATA klasoru (FARKLI DATASET - diger detector'lardan farkli)
-- **Windowing:** L/5 sliding window uygulanmis
+- **Windowing:** L/10 rolling window (iceride rolling statistics hesaplamasi icin, sliding window yok)
 - **TSFresh:** Kullanilmadi
 - **Ozellik Cikarma:** Custom extraction (istatistiksel ozellikler)
 - **HPT:** GridSearchCV ile v1-v6 versiyonlari optimize edilmis

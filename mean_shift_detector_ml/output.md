@@ -13,7 +13,7 @@
 
 ## Veri Kaynagi ve On Isleme
 - **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
-- **Windowing:** L/5, L/10, L/20 stratejileri denenmis, L/5 en iyi sonuc
+- **Windowing:** 3 strateji denendi (L/10, L/5, L/20), en iyi sonuc **L/5** ile elde edildi
 - **TSFresh:** Kullanilmadi
 - **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
   - Basic stats: mean, std, var, min, max, range
@@ -24,6 +24,13 @@
   - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
   - Autocorrelation: lag1, lag10
   - Other: num_peaks, zero_crossing_rate
+
+## Denenen Window Stratejileri
+| Strateji | Aciklama |
+|----------|----------|
+| v1_len_div_10 | Window size = len/10 |
+| **v2_len_div_5** | **Window size = len/5 (En Iyi)** |
+| v3_len_div_20 | Window size = len/20 |
 
 ## Veri Seti
 | Set | Ornek Sayisi |
