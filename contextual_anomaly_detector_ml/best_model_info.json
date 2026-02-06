@@ -1,0 +1,6 @@
+{
+  "best_model": "lightgbm",
+  "best_f1": 1.0,
+  "test_f1": 1.0,
+  "test_accuracy": 1.0
+}

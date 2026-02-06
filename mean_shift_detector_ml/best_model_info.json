@@ -1,0 +1,5 @@
+{
+  "best_model": "lightgbm",
+  "best_f1": 0.9110997442455243,
+  "feature_names": null
+}
