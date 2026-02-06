@@ -11,10 +11,19 @@
 | Test F1 | 0.9046 |
 | Test Accuracy | 0.9004 |
 
-## Ozellik Cikarma
-- **Yontem:** TSFresh "Efficient" parameter set
-- **Ozellik Sayisi:** 777 istatistiksel, spektral ve temporal ozellik
-- **Pencere Stratejisi:** No Window (tum seri tek parca)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
+  - Basic stats: mean, std, var, min, max, range
+  - Percentiles: q25, median, q75, iqr
+  - Shape stats: skewness, kurtosis, cv
+  - Differencing: diff1_mean/std/var, diff2_mean/std/var
+  - Rolling window: rolling_mean_std, rolling_mean_range, rolling_std_mean
+  - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
+  - Autocorrelation: lag1, lag10
+  - Other: num_peaks, zero_crossing_rate
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -36,6 +45,3 @@
 | **MLP** | **0.9244** | **0.9266** | **0.9015** | **0.9531** |
 | XGBoost | 0.9192 | 0.9205 | 0.9066 | 0.9349 |
 | LightGBM | 0.9153 | 0.9168 | 0.9018 | 0.9323 |
-
-## Not
-Volatility sinifi icin MLP modeli, LightGBM ve XGBoost'tan daha iyi performans gostermistir. Bu, volatility ozelliklerinin non-linear pattern'lar icerdigi anlamina gelebilir.

@@ -11,10 +11,19 @@
 | Test F1 | 0.9125 |
 | Test Accuracy | 0.9108 |
 
-## Ozellik Cikarma
-- **Yontem:** TSFresh "Efficient" parameter set
-- **Ozellik Sayisi:** 777 istatistiksel, spektral ve temporal ozellik
-- **Pencere Stratejisi:** No Window (tum seri tek parca)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
+  - Basic stats: mean, std, var, min, max, range
+  - Percentiles: q25, median, q75, iqr
+  - Shape stats: skewness, kurtosis, cv
+  - Differencing: diff1_mean/std/var, diff2_mean/std/var
+  - Rolling window: rolling_mean_std, rolling_mean_range, rolling_std_mean
+  - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
+  - Autocorrelation: lag1, lag10
+  - Other: num_peaks, zero_crossing_rate
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -36,6 +45,3 @@
 | **XGBoost** | **0.9205** | **0.9196** | **0.9282** | **0.9112** |
 | LightGBM | 0.9166 | 0.9147 | 0.9346 | 0.8956 |
 | MLP | 0.9113 | 0.9101 | 0.9223 | 0.8982 |
-
-## Not
-Variance shift sinifi icin XGBoost modeli az farkla en iyi performansi gostermistir. Tum modeller %91+ dogruluk saglamistir.

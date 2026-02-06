@@ -11,10 +11,19 @@
 | Test F1 | 0.9845 |
 | Test Accuracy | 0.9844 |
 
-## Ozellik Cikarma
-- **Yontem:** TSFresh "Efficient" parameter set
-- **Ozellik Sayisi:** 777 istatistiksel, spektral ve temporal ozellik
-- **Pencere Stratejisi:** No Window (tum seri tek parca)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
+  - Basic stats: mean, std, var, min, max, range
+  - Percentiles: q25, median, q75, iqr
+  - Shape stats: skewness, kurtosis, cv
+  - Differencing: diff1_mean/std/var, diff2_mean/std/var
+  - Rolling window: rolling_mean_std, rolling_mean_range, rolling_std_mean
+  - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
+  - Autocorrelation: lag1, lag10
+  - Other: num_peaks, zero_crossing_rate
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -36,6 +45,3 @@
 | **LightGBM** | **0.9844** | **0.9845** | **0.9769** | **0.9922** |
 | XGBoost | 0.9805 | 0.9807 | 0.9695 | 0.9922 |
 | MLP | 0.8919 | 0.8829 | 0.9631 | 0.8151 |
-
-## Not
-Deterministic trend sinifi cok yuksek dogrulukla tespit edilebilmektedir. LightGBM modeli %98.45 F1 skoru ile en iyi performansi gostermistir.

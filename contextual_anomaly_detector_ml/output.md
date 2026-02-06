@@ -11,10 +11,19 @@
 | Test F1 | 1.0000 |
 | Test Accuracy | 1.0000 |
 
-## Ozellik Cikarma
-- **Yontem:** TSFresh "Efficient" parameter set
-- **Ozellik Sayisi:** 777 istatistiksel, spektral ve temporal ozellik
-- **Pencere Stratejisi:** No Window (tum seri tek parca)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
+  - Basic stats: mean, std, var, min, max, range
+  - Percentiles: q25, median, q75, iqr
+  - Shape stats: skewness, kurtosis, cv
+  - Differencing: diff1_mean/std/var, diff2_mean/std/var
+  - Rolling window: rolling_mean_std, rolling_mean_range, rolling_std_mean
+  - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
+  - Autocorrelation: lag1, lag10
+  - Other: num_peaks, zero_crossing_rate
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -36,6 +45,3 @@
 | **LightGBM** | **1.0000** | **1.0000** | **1.0000** | **1.0000** |
 | MLP | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | XGBoost | 0.9987 | 0.9987 | 1.0000 | 0.9974 |
-
-## Not
-Bu detector mukemmel performans gostermistir (F1=1.0). Contextual anomaly siniflari diger siniflardan kolayca ayirt edilebilir ozelliklere sahiptir.

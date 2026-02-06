@@ -11,10 +11,19 @@
 | Test F1 | 0.8992 |
 | Test Accuracy | 0.8953 |
 
-## Ozellik Cikarma
-- **Yontem:** TSFresh "Efficient" parameter set
-- **Ozellik Sayisi:** 777 istatistiksel, spektral ve temporal ozellik
-- **Pencere Stratejisi:** No Window (tum seri tek parca)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** Generated Data (sentetik uretilmis zaman serileri)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (~38 istatistiksel ozellik)
+  - Basic stats: mean, std, var, min, max, range
+  - Percentiles: q25, median, q75, iqr
+  - Shape stats: skewness, kurtosis, cv
+  - Differencing: diff1_mean/std/var, diff2_mean/std/var
+  - Rolling window: rolling_mean_std, rolling_mean_range, rolling_std_mean
+  - Half comparison: half_mean_diff, half_std_diff, half_mean_ratio
+  - Autocorrelation: lag1, lag10
+  - Other: num_peaks, zero_crossing_rate
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -36,6 +45,3 @@
 | **LightGBM** | **0.8906** | **0.8958** | **0.8555** | **0.9401** |
 | XGBoost | 0.8867 | 0.8917 | 0.8544 | 0.9323 |
 | MLP | 0.8841 | 0.8916 | 0.8375 | 0.9531 |
-
-## Not
-Collective anomaly tespiti orta zorlukta bir gorevdir. Tum modeller yuksek recall (~93-95%) ama daha dusuk precision (~85%) gostermistir.

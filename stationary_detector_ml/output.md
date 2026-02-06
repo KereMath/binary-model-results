@@ -12,10 +12,12 @@
 | Cohen's Kappa | 0.8825 |
 | MCC | 0.8886 |
 
-## Ozellik Cikarma
-- **Yontem:** Sliding Window ile istatistiksel ozellikler
-- **Pencere Stratejisi:** L/5 (HPT ile optimize edilmis)
-- **HPT Yontemi:** GridSearchCV (tek repo olan single detector ml gibi)
+## Veri Kaynagi ve On Isleme
+- **Ham Veri:** LASTDATA klasoru (FARKLI DATASET - diger detector'lardan farkli)
+- **Windowing:** L/5 sliding window uygulanmis
+- **TSFresh:** Kullanilmadi
+- **Ozellik Cikarma:** Custom extraction (istatistiksel ozellikler)
+- **HPT:** GridSearchCV ile v1-v6 versiyonlari optimize edilmis
 
 ## Veri Seti
 | Set | Ornek Sayisi |
@@ -67,8 +69,3 @@
 |--|----------------------|-------------------------|
 | Actual Stationary | 59,598 | 0 |
 | Actual Non-Stationary | 7,000 | 52,525 |
-
-## Not
-Bu detector hocanin makalesinde kullanilan orijinal stationarity detector'dur. Coklu HPT versiyonlari (v1-v6) ile optimize edilmistir. v3 ve v4'te MLP modeli en iyi performansi gostermis ve %94.10 F1 skoruna ulasmistir.
-
-**Onemli:** HPT sureci, model performansini baseline'dan (v1: %88.87) final'e (v4: %94.10) onemli olcude arttirmistir (~%5.2 iyilesme).
