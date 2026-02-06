@@ -33,7 +33,7 @@
 - **Windowing:**
   - 9 detector (collective, contextual, deterministic, meannew, point, stochastic, trend_shift, variancenew, volatility): L/5 sliding window (tek strateji)
   - mean_shift_detector_ml: 3 strateji denendi (L/10, L/5, L/20), en iyi L/5
-  - stationary_detector_ml: L/10 rolling window (dosya-bazli isleme, sliding window yok)
+  - stationary_detector_ml: 3 strateji denendi (L/10, L/5, L/20), en iyi **L/5** (v3/v4)
 - **Ozellik Sayisi:** ~38 custom istatistiksel ozellik
 
 ### Cikarilan Ozellikler

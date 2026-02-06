@@ -14,10 +14,20 @@
 
 ## Veri Kaynagi ve On Isleme
 - **Ham Veri:** LASTDATA klasoru (FARKLI DATASET - diger detector'lardan farkli)
-- **Windowing:** L/10 rolling window (iceride rolling statistics hesaplamasi icin, sliding window yok)
+- **Windowing:** 3 strateji denendi (L/10, L/5, L/20), en iyi sonuc **L/5** ile elde edildi (v3/v4)
 - **TSFresh:** Kullanilmadi
 - **Ozellik Cikarma:** Custom extraction (istatistiksel ozellikler)
 - **HPT:** GridSearchCV ile v1-v6 versiyonlari optimize edilmis
+
+## Denenen Window Stratejileri
+| Versiyon | HPO | Window | F1 (En Iyi Model) |
+|----------|-----|--------|-------------------|
+| v1 | Hayir | L/10 | 0.8887 (XGBoost) |
+| v2 | Evet | L/10 | 0.9105 (Extra Trees) |
+| **v3** | **Hayir** | **L/5** | **0.9410 (MLP)** |
+| **v4** | **Evet** | **L/5** | **0.9410 (MLP)** |
+| v5 | Hayir | L/20 | 0.8440 (XGBoost) |
+| v6 | Evet | L/20 | 0.8594 (Random Forest) |
 
 ## Veri Seti
 | Set | Ornek Sayisi |
